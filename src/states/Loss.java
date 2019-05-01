@@ -1,18 +1,17 @@
-package state;
+package states;
 
 import crapsSimulation.Dice;
 
-public class Win extends State {
-// Dummy State
-    
-    public Win (Dice dice){
-        super(dice);
-    }
+public class Loss extends State {
 
-    public Win (State source) {
+    public Loss(Dice pts) {
+        super(pts);
+    }
+    
+    public Loss(State source) {
         super(source);
     }
-    
+
     public void transitionState() {
         System.out.println("** Invalid State Transition Exception **");
         System.exit(0);

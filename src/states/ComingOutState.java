@@ -1,4 +1,4 @@
-package state;
+package states;
 
 import crapsSimulation.Dice;
 
@@ -32,5 +32,4 @@ public class ComingOutState extends State {
 		else
 			getContext().setState(new PointState(this));
 	}
-
 }

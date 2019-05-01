@@ -3,9 +3,9 @@ package crapsSimulation;
 import java.util.Random;
 import java.util.Scanner;
 
-import state.ComingOutState;
-import state.Loss;
-import state.Win;
+import states.ComingOutState;
+import states.Loss;
+import states.Win;
 
 public class GameOfCraps {
 

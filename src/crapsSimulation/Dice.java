@@ -2,11 +2,10 @@ package crapsSimulation;
 
 import java.util.Random;
 
-import state.State;
+import states.State;
 
 public class Dice {
-// Context class - current roll of the dice
-
+	// Context class - current roll of the dice
 	private int current_roll;
 	private State objState;
 
@@ -32,7 +31,7 @@ public class Dice {
 		objState.roll_dice();
 	}
 
-	// randmomly generated number between 2-12
+	// randomly generated number between 2-12
 	private int generateRoll() {
 		final int MIN = 2;
 		final int MAX = 12;
