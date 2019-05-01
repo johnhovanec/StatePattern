@@ -3,6 +3,7 @@ package crapsSimulation;
 import java.util.Random;
 import java.util.Scanner;
 
+import state.ComingOutState;
 import state.Loss;
 import state.Win;
 
@@ -30,10 +31,12 @@ public class GameOfCraps {
 				human_winnings = human_winnings + wager;
 			else
 				human_winnings = human_winnings - wager;
+			
+			dice.setState(new ComingOutState(dice));
 
 			// COMPUTER'S ROUND
 			wager = randomly_generate(MAX_WAGER);
-			System.out.println("I wager $" + wager + " (Computer)");
+			System.out.println("\nI wager $" + wager + " (Computer)");
 			dice = new Dice();
 			playRound(dice);
 
@@ -41,7 +44,18 @@ public class GameOfCraps {
 				computer_winnings = computer_winnings + wager;
 			else
 				computer_winnings = computer_winnings - wager;
+			
+			System.out.println("Your current winnings: $" + human_winnings);
+			System.out.println("My current winnings: $" + computer_winnings);
+			dice.setState(new ComingOutState(dice));			
 		}
+		
+		if (human_winnings > computer_winnings)
+			System.out.println("GAME OVER -- Humans Rule!");
+		else if (computer_winnings > human_winnings)
+			System.out.println("GAME OVER -- Computers Rule!");
+		else
+			System.out.println("GAME OVER -- Humans and Computers rule equally!");
 	}
 
 	public static int promptForNumGames() {
