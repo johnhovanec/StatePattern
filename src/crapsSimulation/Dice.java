@@ -1,7 +1,6 @@
 package crapsSimulation;
 
 import java.util.Random;
-
 import states.State;
 
 public class Dice {
