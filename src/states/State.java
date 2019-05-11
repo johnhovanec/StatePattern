@@ -22,7 +22,7 @@ public abstract class State {
         return context;
     }
 
-    public void setContext(Dice dice) {
+    private void setContext(Dice dice) {
         context = dice;
     }
     
